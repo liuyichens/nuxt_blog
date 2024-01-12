@@ -17,7 +17,12 @@ export default {
       lg: '992px',
       xl: '1200px'
     },
-    extend: {},
+    extend: {
+      colors: {
+        background: 'rgb(var(--ui-background) / <alpha-value>)',
+        foreground: 'rgb(var(--ui-foreground) / <alpha-value>)'
+      }
+    },
   },
   plugins: [],
 }
