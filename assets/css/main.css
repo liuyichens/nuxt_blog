@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: 'HarmonyOS Sans SC', 'Helvetica Neue', Arial, sans-serif;
+    @apply antialiased font-sans text-foreground bg-background;
+}

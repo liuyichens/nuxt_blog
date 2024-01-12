@@ -10,12 +10,12 @@ const {data: posts} = await useAsyncData('posts', () => queryContent('/blog')
     .sort({date: -1})
     .find())
 
-// useSeoMeta({
-//   title: page.value.title,
-//   ogTitle: page.value.title,
-//   description: page.value.description,
-//   ogDescription: page.value.description
-// })
+useSeoMeta({
+  title: 'Blog',
+  ogTitle: 'Blog',
+  description: "This is my blog list",
+  ogDescription: 'This is my blog list'
+})
 
 </script>
 
@@ -25,16 +25,16 @@ const {data: posts} = await useAsyncData('posts', () => queryContent('/blog')
       <div class="container mx-auto">
         <div class="divide-y-2 divide-gray-100 dark:divide-gray-800">
           <BlogPost v-for="(post, index) in posts" :key="index"
-          :path="post._path"
-          :title="post.title"
-          :description="post.description"
-          :image="post.cover"
-          :date="new Date(post.date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})"/>
+                    :path="post._path"
+                    :title="post.title"
+                    :description="post.description"
+                    :image="post.cover"
+                    :date="new Date(post.date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})"/>
         </div>
       </div>
     </section>
     <aside class="max-w-[300px] w-full hidden lg:block">
-      <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
+      <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"/>
     </aside>
   </div>
 </template>

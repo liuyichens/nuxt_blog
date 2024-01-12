@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import {joinURL} from "ufo";
+import DocsToc from "~/components/toc/DocsToc.vue";
 
 const route = useRoute()
 const {data: post} = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 
-if(!post.value){
+if (!post.value) {
   throw createError({statusCode: 404, statusMessage: 'Post not found', fatal: true})
 }
 
@@ -18,7 +19,7 @@ useSeoMeta({
   ogDescription: description
 })
 
-if(post.value.image?.src){
+if (post.value.image?.src) {
   const site = useSiteConfig()
 
   useSeoMeta({
@@ -38,20 +39,18 @@ if(post.value.image?.src){
 </script>
 
 <template>
-<UContainer v-if="post">
-  <div>
-    <div class="prose">
-      <ContentRenderer v-if="post && post.body" :value="post"/>
-    </div>
-
-    <div>
-      <div v-if="post.body && post.body.toc">
-       Links:  {{ post.body.toc.links }}
+  <UContainer v-if="post">
+    <div class="flex flex-col lg:grid lg:grid-cols-10 lg:gap-8">
+      <div class="lg:col-span-8">
+        <div class="mt-8 pb-24 prose prose-primary dark:prose-invert max-w-none">
+          <ContentRenderer v-if="post && post.body" :value="post"/>
+        </div>
+      </div>
+      <div class="lg:col-span-2 order-first lg:order-last">
+        <DocsToc v-if="post.body && post.body.toc" :links="post.body.toc.links"/>
       </div>
     </div>
-
-  </div>
-</UContainer>
+  </UContainer>
 </template>
 
 <style scoped>
