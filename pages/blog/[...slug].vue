@@ -39,7 +39,7 @@ if (post.value.image?.src) {
 </script>
 
 <template>
-  <UContainer v-if="post">
+  <div class="container mx-auto px-5" v-if="post">
     <div class="flex flex-col lg:grid lg:grid-cols-10 lg:gap-8">
       <div class="lg:col-span-8">
         <div class="mt-8 pb-24 prose prose-primary dark:prose-invert max-w-none">
@@ -50,7 +50,7 @@ if (post.value.image?.src) {
         <DocsToc v-if="post.body && post.body.toc" :links="post.body.toc.links"/>
       </div>
     </div>
-  </UContainer>
+  </div>
 </template>
 
 <style scoped>

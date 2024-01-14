@@ -5,6 +5,8 @@
 //   throw new createError({statusCode: 404, statusMessage: 'Page not found', fatal: true})
 // }
 
+import {onMounted} from 'vue';
+
 const {data: posts} = await useAsyncData('posts', () => queryContent('/blog')
     .where({_extension: 'md'})
     .sort({date: -1})
@@ -17,6 +19,15 @@ useSeoMeta({
   ogDescription: 'This is my blog list'
 })
 
+const {$aos} = useNuxtApp()
+
+onMounted(() => {
+  $aos().init({
+    easing: 'ease-out-back',
+    duration: 1000
+  })
+})
+
 </script>
 
 <template>
@@ -25,6 +36,9 @@ useSeoMeta({
       <div class="container mx-auto">
         <div class="divide-y-2 divide-gray-100 dark:divide-gray-800">
           <BlogPost v-for="(post, index) in posts" :key="index"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    :index="index"
                     :path="post._path"
                     :title="post.title"
                     :description="post.description"

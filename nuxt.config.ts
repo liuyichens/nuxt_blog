@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: {enabled: true},
-    modules: ['@nuxt/content', '@nuxt/ui', 'nuxt-og-image', '@nuxt/image'],
+    modules: ['@nuxt/content', '@nuxt/ui', 'nuxt-og-image', '@nuxt/image','@vueuse/nuxt'],
     site: {
         url: 'https://example.com'
     },
@@ -18,7 +18,12 @@ export default defineNuxtConfig({
             fields: ['icon', 'to', 'target']
         }
     },
-    css: ['~/assets/css/main.css', '~/assets/css/scrollbars.css', '~/assets/css/harmonyos_sans_sc.css'],
+    css: [
+        '~/assets/css/main.css',
+        '~/assets/css/scrollbars.css',
+        '~/assets/css/harmonyos_sans_sc.css',
+        'aos/dist/aos.css'
+    ],
     postcss: {
         plugins: {
             'postcss-import': {},

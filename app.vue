@@ -10,28 +10,20 @@
         <Footer/>
       </div>
     </NuxtLayout>
+
+    <ClientOnly>
+      <DocDocsSearch :files="files" :navigation="navigation"/>
+    </ClientOnly>
+
     <UNotifications/>
   </div>
 </template>
-<script setup>
-import LazyLoad from "vanilla-lazyload";
-import {onBeforeUnmount, onMounted} from "vue";
+<script setup lang="ts">
+import type {ParsedContent} from "@nuxt/content/dist/runtime/types";
 
-// const lazyLoadInstance = new LazyLoad({
-//   // css属性选择器
-//   elements_selector: 'img',
-//   // 滚动多少加载
-//   threshold: 0,
-//   // 加载的元素URL的属性
-//   data_src: 'lazy-src',
-// })
-//
-// onMounted(() => {
-//   lazyLoadInstance.update()
-// })
-//
-// onBeforeUnmount(() => {
-//   lazyLoadInstance.destroy()
-// })
-
+const {data: navigation} = await useAsyncData('navigation', () => fetchContentNavigation())
+const {data: files} = useLazyFetch<ParsedContent[]>('/api/search.json', {
+  default: () => [],
+  server: false
+})
 </script>

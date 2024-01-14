@@ -6,6 +6,7 @@ defineOptions({
   inheritAttrs: false
 })
 const props = withDefaults(defineProps<{
+  index: number,
   path: string,
   title?: string,
   description?: string,
@@ -27,27 +28,6 @@ function getDateTime() {
   return new Date(props.date).toISOString()
 }
 
-const imgUrls = [
-  'https://picsum.photos/id/20/640/360',
-  'https://picsum.photos/id/24/640/360',
-  'https://picsum.photos/id/25/640/360',
-  'https://picsum.photos/id/0/640/360',
-  'https://picsum.photos/id/42/640/360',
-  'https://picsum.photos/id/48/640/360',
-  'https://picsum.photos/id/36/640/360',
-  'https://picsum.photos/id/39/640/360',
-  'https://picsum.photos/id/119/640/360',
-  'https://picsum.photos/id/160/640/360',
-  'https://picsum.photos/id/201/640/360',
-]
-
-const showImgUrl = computed(() => {
-  const randomIndex = Math.floor(Math.random() * imgUrls.length)
-  return props.image || imgUrls[randomIndex]
-})
-
-// const {$lazyLoad} = useNuxtApp()
-
 </script>
 
 <template>
@@ -57,7 +37,7 @@ const showImgUrl = computed(() => {
       <NuxtLink :to="path" class="absolute top-0 left-0 w-full h-full rounded overflow-hidden">
         <NuxtImg class="object-cover w-full h-full max-w-full transform transition-transform duration-200 group-hover:scale-105"
              width="480" height="300"
-             :src="showImgUrl"
+             :src="`https://picsum.photos/640/360?index=${index}&t=${new Date().getTime()}`"
              :alt="title" loading="lazy"/>
       </NuxtLink>
     </div>

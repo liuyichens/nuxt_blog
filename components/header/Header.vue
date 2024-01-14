@@ -1,26 +1,63 @@
 <template>
   <header
-      class="relative sticky top-0 z-50 bg-white border-b border-slate-900/10 dark:border-slate-300/10 dark:bg-gray-900 dark:text-gray-400">
-    <div class="container mx-auto flex flex-wrap px-5 py-2 flex-col md:flex-row items-center">
-      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 dark:text-white">
-        <div class="img-container h-[40px] w-[74px] overflow-hidden">
-          <img src="~/assets/img/logo.svg" alt="logo" class="object-fill logo-img" width="100%" height="100%"/>
-        </div>
-        <span class="ml-3 text-xl">Tailblocks</span>
-      </a>
-      <nav
-          class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 dark:md:border-gray-700	flex flex-wrap items-center text-base justify-center">
-        <a href="/" class="mr-5 hover:text-gray-900 dark:hover:text-white">Home</a>
-        <a href="/blog" class="mr-5 hover:text-gray-900 dark:hover:text-white">Blog</a>
-        <a href="/" class="mr-5 hover:text-gray-900 dark:hover:text-white">Third Link</a>
-        <a href="/about" class="mr-5 hover:text-gray-900 dark:hover:text-white">About</a>
-      </nav>
-      <ThemeSwitch/>
+      class="sticky top-0 z-50 bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px">
+    <div class="container mx-auto px-5 flex items-center justify-between gap-3 h-[--header-height]">
+      <div class="left flex items-center lg:flex-1 gap-1.5">
+        <NuxtLink to="/" aria-label="Logo"
+                  class="flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white flex items-end gap-1.5
+h-10 w-[74px] overflow-hidden">
+          <NuxtImg src="/logo.svg" class="object-fill logo-img" width="100%" height="100%"/>
+        </NuxtLink>
+        <HeaderLinks :links="links"/>
+      </div>
+
+      <div>
+        <DocsSearchButton/>
+        <ThemeSwitch/>
+      </div>
     </div>
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type {NavItem} from "@nuxt/content/dist/runtime/types";
+import DocsSearchButton from "~/components/doc/DocsSearchButton.vue";
+
+const navigation = inject<NavItem[]>('navigation', [])
+
+const links = [{
+  label: '首页',
+  to: '/'
+}, {
+  label: '文章',
+  to: '/blog'
+},{
+  label: '收藏',
+  to: '/favor'
+}, {
+  label: '关于',
+  to: '/about'
+}, {
+  label: '知识库',
+  to: 'https://liuyichens.github.io/'
+}, {
+  label: '语雀',
+  to: 'https://www.yuque.com/dashboard'
+}, {
+  label: '掘金',
+  to: 'https://juejin.cn/'
+}]
+
+const config = {
+  button: {
+    base: 'lg:hidden',
+    icon: {
+      open: 'i-heroicons-bars-3',
+      close: 'i-heroicons-x-mark-20-solid'
+    }
+  }
+}
+
 </script>
 
 

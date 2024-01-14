@@ -12,7 +12,7 @@ export default defineAppConfig({
                 foreground: 'var(--color-gray-200)'
             },
             header: {
-                height: '4rem'
+                height: '3.5rem'
             }
         },
         icons: {

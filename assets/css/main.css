@@ -4,5 +4,6 @@
 
 body {
     font-family: 'HarmonyOS Sans SC', 'Helvetica Neue', Arial, sans-serif;
+    color: rgb(var(--ui-forground)/1);
     @apply antialiased font-sans text-foreground bg-background;
 }
