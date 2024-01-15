@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {joinURL} from "ufo";
 import DocsToc from "~/components/toc/DocsToc.vue";
+import {onMounted} from "vue";
 
 const route = useRoute()
 const {data: post} = await useAsyncData(route.path, () => queryContent(route.path).findOne())
@@ -41,12 +42,13 @@ if (post.value.image?.src) {
 <template>
   <div class="container mx-auto px-5" v-if="post">
     <div class="flex flex-col lg:grid lg:grid-cols-10 lg:gap-8">
-      <div class="lg:col-span-8">
+      <div class="lg:col-span-8" data-aos="fade-up" data-aos-duration="600">
         <div class="mt-8 pb-24 prose prose-primary dark:prose-invert max-w-none">
           <ContentRenderer v-if="post && post.body" :value="post"/>
         </div>
       </div>
-      <div class="lg:col-span-2 order-first lg:order-last">
+      <div class="lg:col-span-2 order-first lg:order-last" data-aos="fade-up" data-aos-duration="600"
+           data-aos-delay="50">
         <DocsToc v-if="post.body && post.body.toc" :links="post.body.toc.links"/>
       </div>
     </div>

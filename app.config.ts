@@ -40,5 +40,7 @@ export default defineAppConfig({
                 }
             },
         }
-    }
+    },
+    author: 'Liu Yichen',
+    description: 'A simple markdown editor with live preview.'
 })

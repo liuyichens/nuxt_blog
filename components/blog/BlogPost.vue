@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import {onBeforeUnmount, onMounted} from "vue";
-import LazyLoad from 'vanilla-lazyload'
-
 defineOptions({
   inheritAttrs: false
 })

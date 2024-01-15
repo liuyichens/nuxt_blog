@@ -1,11 +1,5 @@
 <script setup>
-// const {data: page} = await useAsyncData('blog', () => queryContent('/blog').findOne())
-// debugger
-// if (!page.value) {
-//   throw new createError({statusCode: 404, statusMessage: 'Page not found', fatal: true})
-// }
-
-import {onMounted} from 'vue';
+import AuthorPanel from "~/components/aside/AuthorPanel.vue";
 
 const {data: posts} = await useAsyncData('posts', () => queryContent('/blog')
     .where({_extension: 'md'})
@@ -19,15 +13,6 @@ useSeoMeta({
   ogDescription: 'This is my blog list'
 })
 
-const {$aos} = useNuxtApp()
-
-onMounted(() => {
-  $aos().init({
-    easing: 'ease-out-back',
-    duration: 1000
-  })
-})
-
 </script>
 
 <template>
@@ -36,8 +21,6 @@ onMounted(() => {
       <div class="container mx-auto">
         <div class="divide-y-2 divide-gray-100 dark:divide-gray-800">
           <BlogPost v-for="(post, index) in posts" :key="index"
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="top-bottom"
                     :index="index"
                     :path="post._path"
                     :title="post.title"
@@ -48,7 +31,9 @@ onMounted(() => {
       </div>
     </section>
     <aside class="max-w-[300px] w-full hidden lg:block">
-      <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"/>
+      <nav class="sticky top-[--header-height] space-y-3">
+        <AuthorPanel/>
+      </nav>
     </aside>
   </div>
 </template>
