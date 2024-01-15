@@ -1,68 +1,37 @@
-<template>
-  <header
-      class="sticky top-0 z-50 bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px">
-    <div class="container mx-auto px-5 flex items-center justify-between gap-3 h-[--header-height]">
-      <div class="left flex items-center lg:flex-1 gap-1.5">
-        <NuxtLink to="/" aria-label="Logo"
-                  class="flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white flex items-end gap-1.5
-h-10 w-[74px] overflow-hidden">
-          <NuxtImg src="/logo.svg" class="object-fill logo-img" width="100%" height="100%"/>
-        </NuxtLink>
-        <HeaderLinks :links="links"/>
-      </div>
+<script setup lang="ts">
 
-      <div>
-        <DocsSearchButton/>
-        <ThemeSwitch/>
-      </div>
+</script>
+
+<template>
+  <header class="border-b border-b-gray-200 sticky top-0 bg-white z-50">
+    <div class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+             viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Tailblocks</span>
+      </a>
+      <nav
+          class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-sm justify-center">
+        <a class="mr-5 hover:text-gray-900">First Link</a>
+        <a class="mr-5 hover:text-gray-900">Second Link</a>
+        <a class="mr-5 hover:text-gray-900">Third Link</a>
+        <a class="mr-5 hover:text-gray-900">Fourth Link</a>
+      </nav>
+      <button
+          class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+        Button
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+             class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button>
     </div>
   </header>
 </template>
 
-<script setup lang="ts">
-import type {NavItem} from "@nuxt/content/dist/runtime/types";
-import DocsSearchButton from "~/components/doc/DocsSearchButton.vue";
-
-const navigation = inject<NavItem[]>('navigation', [])
-
-const links = [{
-  label: '首页',
-  to: '/'
-}, {
-  label: '文章',
-  to: '/blog'
-},{
-  label: '收藏',
-  to: '/favor'
-}, {
-  label: '关于',
-  to: '/about'
-}, {
-  label: '知识库',
-  to: 'https://liuyichens.github.io/'
-}, {
-  label: '语雀',
-  to: 'https://www.yuque.com/dashboard'
-}, {
-  label: '掘金',
-  to: 'https://juejin.cn/'
-}]
-
-const config = {
-  button: {
-    base: 'lg:hidden',
-    icon: {
-      open: 'i-heroicons-bars-3',
-      close: 'i-heroicons-x-mark-20-solid'
-    }
-  }
-}
-
-</script>
-
-
 <style scoped>
-.dark .logo-img {
-  filter: drop-shadow(2px 2px 6px #009a61);
-}
+
 </style>

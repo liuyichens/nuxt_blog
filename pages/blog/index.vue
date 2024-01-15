@@ -1,6 +1,4 @@
 <script setup>
-import AuthorPanel from "~/components/aside/AuthorPanel.vue";
-
 const {data: posts} = await useAsyncData('posts', () => queryContent('/blog')
     .where({_extension: 'md'})
     .sort({date: -1})
@@ -32,7 +30,7 @@ useSeoMeta({
     </section>
     <aside class="max-w-[300px] w-full hidden lg:block">
       <nav class="sticky top-[--header-height] space-y-3">
-        <AuthorPanel/>
+
       </nav>
     </aside>
   </div>

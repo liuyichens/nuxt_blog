@@ -24,7 +24,6 @@ const props = withDefaults(defineProps<{
 function getDateTime() {
   return new Date(props.date).toISOString()
 }
-
 </script>
 
 <template>
@@ -32,10 +31,10 @@ function getDateTime() {
        data-aos-duration="200" data-aos-once="false" data-aos-anchor-placement="top-bottom">
     <div class="left">
       <NuxtLink :to="path" class="absolute top-0 left-0 w-full h-full rounded overflow-hidden">
-        <NuxtImg class="object-cover w-full h-full max-w-full transform transition-transform duration-200 group-hover:scale-105"
-             width="480" height="300"
-             :src="`https://picsum.photos/640/360?index=${index}&t=${new Date().getTime()}`"
-             :alt="title" loading="lazy"/>
+        <img class="object-cover w-full h-full max-w-full transform transition-transform duration-200 group-hover:scale-105"
+                 width="480" height="300"
+                 :src="`https://picsum.photos/640/360?index=${index}&t=${new Date().getTime()}`"
+                 :alt="title" loading="lazy"/>
       </NuxtLink>
     </div>
     <div class="right">
@@ -49,9 +48,7 @@ function getDateTime() {
         </time>
         <!--        <span class="text-gray-500 text-xs sm:text-sm">{{ new Date(date).toLocaleDateString('zh-CN', {year: 'numeric', month: 'short', day: 'numeric'}) }}</span>-->
         <div class="px-2 flex flex-nowrap items-center gap-2 text-sm">
-          <Badge v-for="(tag, tagIndex) in tags" :key="tag + ',' + tagIndex" :color="tag.color">
-            {{ tag.name }}
-          </Badge>
+
         </div>
       </div>
     </div>
@@ -59,12 +56,5 @@ function getDateTime() {
 </template>
 
 <style scoped>
-.left {
-  @apply relative flex-1 before:content-[''] before:block before:pt-[60%]
-}
 
-.right {
-  flex: 2.5;
-  @apply flex flex-col justify-between w-0 flex-shrink-0;
-}
 </style>

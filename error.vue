@@ -19,13 +19,7 @@ const {data: files} = useLazyFetch('/api/search.json', {default: () => [], serve
 
 <template>
 <div>
-  <Header/>
 
-  <Footer/>
-  <ClientOnly>
-
-  </ClientOnly>
-  <UNotifications/>
 </div>
 </template>
 
