@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     css: [
         '~/assets/css/main.css',
         '~/assets/css/scrollbars.css',
-        '~/assets/css/harmonyos_sans_sc.css',
+        '~/assets/css/fonts.css',
         'aos/dist/aos.css'
     ],
     postcss: {

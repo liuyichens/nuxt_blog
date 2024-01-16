@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import type {Config} from 'tailwindcss'
+import tailwindTypography from '@tailwindcss/typography'
 export default <Partial<Config>> {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -16,7 +17,7 @@ export default <Partial<Config>> {
         background: 'rgb(var(--ui-background) / <alpha-value>)',
         foreground: 'rgb(var(--ui-foreground) / <alpha-value>)'
       },
-      typography: (theme: any) => {
+      /*typography: (theme: any) => {
         return {
           DEFAULT: {
             css: {
@@ -189,7 +190,7 @@ export default <Partial<Config>> {
             }
           }
         }
-      }
+      }*/
     },
     screens: {
       xs: '480px',
@@ -199,6 +200,6 @@ export default <Partial<Config>> {
       xl: '1200px'
     },
   },
-  plugins: [],
+  plugins: [tailwindTypography],
 }
 
