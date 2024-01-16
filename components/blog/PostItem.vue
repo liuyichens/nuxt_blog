@@ -34,13 +34,13 @@ function getDateTime() {
         <div class="overlay relative flex flex-row justify-start w-full">
           <div
               class="ring-1 ring-gray-200 dark:ring-gray-800 relative overflow-hidden aspect-[16/9] w-full rounded-lg pointer-events-none">
-            <img :src="`https://picsum.photos/640/360?index=${index}&t=${new Date().getTime()}`" alt="cover"
-                 class="object-cover object-top w-full h-full transform transition-transform duration-200 group-hover:scale-105"/>
+            <img v-lazy src="/img-loading.svg" :data-src="`https://picsum.photos/640/360?index=${index}&t=${new Date().getTime()}`" alt="cover"
+                 class="object-cover object-center w-full h-full transform transition-transform duration-200 group-hover:scale-105"/>
           </div>
           <div class="flex flex-col justify-end absolute left-0 top-0 right-0 bottom-0 p-5 w-full rounded-lg overlay-content">
             <span class="read-more">Read more</span>
           </div>
-          <a :href="path" class="absolute block top-0 right-0 bottom-0 left-0"></a>
+          <NuxtLink :to="path" class="absolute block top-0 right-0 bottom-0 left-0" rel="noopener" :aria-label="title"></NuxtLink>
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@ function getDateTime() {
         </div>
         <div class="entry-header">
           <h2 class="entry-title lg:text-xl m-0 font-medium tracking-tight leading-tight lg:leading-tight line-clamp-2">
-            <a :href="path">{{ title }}</a>
+            <NuxtLink :to="path" rel="noopener" :aria-label="title">{{ title }}</NuxtLink>
           </h2>
           <ul class="post-meta mt-1">
             <li class="meta-tag">

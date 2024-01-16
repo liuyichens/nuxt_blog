@@ -1,3 +1,23 @@
+<script setup>
+import PostItem from "~/components/blog/PostItem.vue";
+
+useSeoMeta({
+  title: 'Home'
+})
+
+const {data: posts} = await useAsyncData('posts', () => queryContent('/blog')
+    .where({_extension: 'md'})
+    .sort({date: -1})
+    .find())
+
+useSeoMeta({
+  title: 'Blog',
+  ogTitle: 'Blog',
+  description: "This is my blog list",
+  ogDescription: 'This is my blog list'
+})
+
+</script>
 <template>
   <div class="body-wrap flex flex-1 flex-col z-10">
     <div class="container flex flex-wrap max-w-[1200px] m-auto w-full gap-5 mt-2.5 flex-1">
@@ -66,31 +86,9 @@
     </div>
   </div>
 </template>
-<script setup>
-import PostItem from "~/components/blog/PostItem.vue";
 
-useSeoMeta({
-  title: 'Home'
-})
-
-const {data: posts} = await useAsyncData('posts', () => queryContent('/blog')
-    .where({_extension: 'md'})
-    .sort({date: -1})
-    .find())
-
-useSeoMeta({
-  title: 'Blog',
-  ogTitle: 'Blog',
-  description: "This is my blog list",
-  ogDescription: 'This is my blog list'
-})
-
-</script>
 <style scoped>
 .widget{
   margin-bottom: 2.5rem;
-}
-.title-block {
-
 }
 </style>
