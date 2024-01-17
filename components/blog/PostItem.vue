@@ -49,7 +49,7 @@ function getDateTime() {
         <div
             class="meta-category flex flex-wrap items-center mb-3 text-[10px] font-medium tracking-normal uppercase">
           <a :href="path" class="category-title flex items-center ml-0">
-            <span class="char" style="background-color: rgb(228, 178, 142);">E</span>
+            <span class="char bg-[#e4b28e] dark:bg-[#555555]">E</span>
             <span class="label">Etiam</span>
           </a>
         </div>

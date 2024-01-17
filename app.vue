@@ -4,10 +4,12 @@
     <NuxtLayout>
       <Header/>
       <NuxtPage/>
+      <Footer/>
     </NuxtLayout>
   </div>
 </template>
 <script setup lang="ts">
+
 useHead({
   meta: [
     {charset: 'utf-8'},
