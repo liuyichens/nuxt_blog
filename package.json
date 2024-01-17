@@ -12,6 +12,8 @@
   "devDependencies": {
     "@nuxt/content": "2.8.2",
     "@tailwindcss/typography": "^0.5.10",
+    "@unocss/nuxt": "^0.58.3",
+    "@unocss/preset-typography": "^0.58.3",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.9.0",
     "nuxt-og-image": "3.0.0-rc.25",

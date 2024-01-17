@@ -205,6 +205,6 @@ export default <Partial<Config>> {
       xl: '1200px'
     },
   },
-  plugins: [],
+  plugins: [tailwindTypography],
 }
 
