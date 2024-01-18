@@ -1,0 +1,48 @@
+@import "variable.css";
+
+/*h3, .h3{*/
+/*    font-size: 1.75rem;*/
+/*}*/
+
+/*.prose-wrap {*/
+/*    width: 100%;*/
+/*}*/
+
+/*@media (min-width: 1020px) {*/
+/*    .prose-wrap {*/
+/*        position: relative;*/
+/*        padding-right: 20px;*/
+/*        padding-left: 20px;*/
+/*    }*/
+/*}*/
+
+/*.prose-content {*/
+/*    font-family: 'HarmonyOS Sans';*/
+/*    font-size: 1rem;*/
+/*    letter-spacing: 0px;*/
+/*    line-height: 1.5;*/
+/*    color: var(--color-primary);*/
+/*}*/
+
+/*.prose-wrap .prose-content > * {*/
+/*    margin-top: 1.25em;*/
+/*    margin-bottom: 1.25em;*/
+/*}*/
+
+/*.prose-wrap .prose-content > *:first-child {*/
+/*    margin-top: 0;*/
+/*}*/
+
+
+/*.prose-wrap .prose-content > p > a {*/
+/*    text-decoration: underline;*/
+/*    color: var(--color-link);*/
+/*}*/
+
+/*.prose-wrap .prose-content > p > a:hover{*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.prose-content h2 {*/
+/*    counter-reset: h3;*/
+/*}*/

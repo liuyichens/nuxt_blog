@@ -8,9 +8,9 @@ export default defineNuxtConfig({
     content: {
         highlight: {
             theme: {
-                light: 'material-theme-lighter',
-                default: 'material-theme',
-                dark: 'material-theme-palenight'
+                light: 'vitesse-light',
+                default: 'vitesse-light',
+                dark: 'vitesse-dark'
             },
             preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini']
         },
@@ -21,7 +21,9 @@ export default defineNuxtConfig({
     css: [
         '~/assets/css/main.css',
         '~/assets/css/scrollbars.css',
+        '~/assets/css/prose.css',
         '~/assets/css/fonts.css',
+        '~/assets/css/harmonyos_sans.css',
         'aos/dist/aos.css'
     ],
     postcss: {

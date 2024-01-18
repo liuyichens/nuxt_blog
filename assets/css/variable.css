@@ -1,0 +1,7 @@
+:root {
+ --color-link: #9a8f97;
+}
+
+.dark {
+ --color-link: #858585;
+}
