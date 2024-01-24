@@ -39,7 +39,8 @@ if (post.value.image?.src) {
 
 <template>
   <div class="container mx-auto px-5" v-if="post">
-    <div class="flex flex-col lg:grid lg:grid-cols-10 lg:gap-8">
+    <div class="flex flex-col lg:grid lg:grid-cols-10 lg:gap-8"
+         data-aos="fade-up" data-aos-duration="600">
       <div class="lg:col-span-8">
         <div class="mt-8 pb-24 prose prose-primary dark:prose-invert max-w-none prose-wrap">
           <ContentRenderer v-if="post && post.body" :value="post" class="prose-content"/>

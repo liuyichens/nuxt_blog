@@ -28,19 +28,24 @@ function getDateTime() {
 </script>
 
 <template>
-  <article class="relative grid grid-cols-3 p-4 w-full gap-y-6 gap-x-5 items-center">
+  <article class="relative grid grid-cols-3 p-4 w-full gap-y-6 gap-x-5 items-center"
+           data-aos="fade-up" data-aos-duration="600"
+           :data-aos-delay="(index+1)*60">
     <div class="group overflow-hidden">
       <div class="entry-thumbnail relative">
         <div class="overlay relative flex flex-row justify-start w-full">
           <div
               class="ring-1 ring-gray-200 dark:ring-gray-800 relative overflow-hidden aspect-[16/9] w-full rounded-lg pointer-events-none">
-            <img v-lazy src="/img-loading.svg" :data-src="`https://picsum.photos/640/360?index=${index}&t=${new Date().getTime()}`" alt="cover"
+            <img v-lazy src="/img-loading.svg"
+                 :data-src="`https://picsum.photos/640/360?index=${index}&t=${new Date().getTime()}`" alt="cover"
                  class="object-cover object-center w-full h-full transform transition-transform duration-200 group-hover:scale-105"/>
           </div>
-          <div class="flex flex-col justify-end absolute left-0 top-0 right-0 bottom-0 p-5 w-full rounded-lg overlay-content">
+          <div
+              class="flex flex-col justify-end absolute left-0 top-0 right-0 bottom-0 p-5 w-full rounded-lg overlay-content">
             <span class="read-more">Read more</span>
           </div>
-          <NuxtLink :to="path" class="absolute block top-0 right-0 bottom-0 left-0" rel="noopener" :aria-label="title"></NuxtLink>
+          <NuxtLink :to="path" class="absolute block top-0 right-0 bottom-0 left-0" rel="noopener"
+                    :aria-label="title"></NuxtLink>
         </div>
       </div>
     </div>
@@ -104,13 +109,14 @@ function getDateTime() {
   color: #fff;
 }
 
-.overlay-content{
+.overlay-content {
   transition: .2s ease all;
 }
 
-.overlay:hover .overlay-content{
+.overlay:hover .overlay-content {
   background-color: rgba(10, 10, 10, .3);
 }
+
 .overlay:hover .read-more {
   opacity: 1;
 }

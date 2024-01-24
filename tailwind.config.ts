@@ -38,7 +38,7 @@ export default <Partial<Config>>{
                             a: {
                                 fontWeight: theme('fontWeight.medium'),
                                 textDecoration: 'none',
-                                borderBottom: '1px solid transparent'
+                                borderBottom: `1px solid ${theme('colors.sky.300')}`,
                             },
                             'a:hover': {
                                 borderColor: 'var(--tw-prose-links)'
