@@ -1,6 +1,3 @@
-# About
+# About Content v2
 
-```js
-const a = 123
-console.log('133')
-```
+[Back home](/)
