@@ -3,7 +3,9 @@
     <NuxtLayout>
       <div class="main-layout">
         <Header/>
+        <Notice/>
         <NuxtPage/>
+        <Footer/>
       </div>
     </NuxtLayout>
   </div>

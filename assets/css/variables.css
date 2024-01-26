@@ -27,4 +27,16 @@
     --color-data-10: #FEC03D;
     --color-data-11: #52C1F5;
     --color-data-12: #82D588;
+    --color-nav-bg: #fff;
+    --color-notice-bg: #fff;
+    --color-main-content: #fff;
+}
+
+.dark {
+    --color-bg: #1f1f1f;
+    --color-nav-bg: #262626;
+    --color-notice-bg: #262626;
+    --color-main-content: #262626;
+    --color-text-primary: #fff;
+    --color-text-regular: #fff;
 }
