@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@nuxt/content": "2.8.2",
+    "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.17",
     "nuxt": "^3.9.3",
     "postcss": "^8.4.33",

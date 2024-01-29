@@ -19,6 +19,7 @@ useSeoMeta({
 </script>
 
 <template>
+  <Notice/>
   <main class="main-content">
     <div class="main-wrap">
       <div class="post-archive">
@@ -26,9 +27,11 @@ useSeoMeta({
           <div class="archive-list">
             <ArticleItem v-for="(post, index) in posts"
                          :key="index"
+                         :path="post._path"
                          :index="index"
                          :title="post.title"
-                         :description="post.description"/>
+                         :description="post.description"
+                         :date="new Date(post.date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})"/>
           </div>
         </div>
       </div>

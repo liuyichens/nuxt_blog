@@ -1,4 +1,5 @@
 @import "./variables.css";
+@import "./prism.css";
 
 .container {
     max-width: 1260px;
@@ -16,7 +17,7 @@ body {
 
 .main-layout {
     max-width: 920px;
-    margin: 60px auto;
+    margin: 60px auto 0;
 }
 
 .head-img-wrap {
@@ -91,12 +92,122 @@ body {
     background-color: var(--color-main-content);
 }
 
-.archive-item{
+.archive-item {
     margin-bottom: 20px;
     padding-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
     transition: all .2s;
-    border-top: 1px solid var(--color-border-3)
+    border-top: 1px solid var(--color-border-3);
+    width: 100%;
 }
 
+.archive-item:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.entry-thumbnail {
+    margin-right: 10px;
+    flex-basis: 30%;
+}
+
+.overlay {
+    position: relative;
+    max-width: 185px;
+    min-width: 100px;
+    aspect-ratio: 16 / 9;
+    pointer-events: none;
+}
+
+.overlay-background {
+
+}
+
+.post-info {
+    flex: 1;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post-title {
+    font-size: 18px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.post-description {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: var(--color-text-regular);
+}
+
+.post-meta {
+    justify-self: flex-end;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.post-meta-time {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    color: var(--color-text-primary);
+    padding: 0.25em 0.4em;
+    border-radius: 4px;
+    background-color: #eee;
+}
+
+
+.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
+    content: '' !important;
+}
+
+.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::after {
+    content: '' !important;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .main-layout {
+        margin: 0 auto 60px;
+    }
+
+    .notice-wrapper,
+    .main-content {
+        margin: 15px 10px 0;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .entry-thumbnail {
+        display: flex;
+        align-items: center;
+    }
+
+    .post-title {
+        font-size: 16px;
+    }
+
+    .post-description {
+        font-size: 13px;
+    }
+}
