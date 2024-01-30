@@ -15,14 +15,14 @@ This post provides an overview of the highlighted features in 3.3. For the full 
 
 ---
 
-:::tip Dependency Updates
+::card{title="Dependency Updates"}
 When upgrading to 3.3, it is recommended to also update the following dependencies:
 
 - volar / vue-tsc@^1.6.4
 - vite@^4.3.5
 - @vitejs/plugin-vue@^4.2.0
 - vue-loader@^17.1.0 (if using webpack or vue-cli)
-  :::
+::
 
 [[TOC]]
 
