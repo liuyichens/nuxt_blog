@@ -59,15 +59,25 @@ export default {
             },
             'h1, h2, h3': {
               letterSpacing: '-0.025em',
+            },
+            h2: {
+              marginBottom: `${16 / 24}em`,
               borderLeft: '3px solid var(--color-primary)',
               paddingLeft: '15px'
             },
-            h2: {
-              marginBottom: `${16 / 24}em`
-            },
             h3: {
+              position: 'relative',
               marginTop: '2.4em',
-              lineHeight: '1.4'
+              lineHeight: '1.4',
+            },
+            'h3::before': {
+              content: '""',
+              position: 'absolute',
+              left: '0',
+              bottom: '-1px',
+              height: '3px',
+              backgroundColor: 'var(--color-primary)',
+              width: '40px'
             },
             h4: {
               marginTop: '2em',
@@ -159,7 +169,6 @@ export default {
               color: theme('colors.slate.50'),
               borderRadius: theme('borderRadius.xl'),
               padding: theme('padding.5'),
-              boxShadow: theme('boxShadow.md'),
               display: 'flex',
               marginTop: `${20 / 14}em`,
               marginBottom: `${32 / 14}em`

@@ -165,7 +165,6 @@ body {
     gap: 4px;
     align-items: center;
 }
-
 .prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
     color: var(--color-text-primary);
     padding: 0.25em 0.4em;
@@ -182,6 +181,9 @@ body {
     content: '' !important;
 }
 
+.prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    background-color: #eee !important;
+}
 
 
 @media only screen and (max-width: 768px) {
