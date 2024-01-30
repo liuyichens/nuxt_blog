@@ -259,6 +259,6 @@ export default {
       })
     },
   },
-  plugins: [tailwindTypography],
+  plugins: [],
 }
 

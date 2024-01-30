@@ -1,5 +1,4 @@
 @import "./variables.css";
-@import "./prism.css";
 
 .container {
     max-width: 1260px;
@@ -165,26 +164,6 @@ body {
     gap: 4px;
     align-items: center;
 }
-.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    color: var(--color-text-primary);
-    padding: 0.25em 0.4em;
-    border-radius: 4px;
-    background-color: #eee;
-}
-
-
-.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
-    content: '' !important;
-}
-
-.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::after {
-    content: '' !important;
-}
-
-.prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    background-color: #eee !important;
-}
-
 
 @media only screen and (max-width: 768px) {
     .main-layout {
