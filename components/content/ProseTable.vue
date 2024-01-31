@@ -1,5 +1,5 @@
 <template>
-  <div m="y-8" overflow="x-auto" max-w="full">
+  <div class="my-8 overflow-auto max-w-full">
     <table class="gray-scrollbar">
       <slot />
     </table>

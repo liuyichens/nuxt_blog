@@ -1,3 +1,52 @@
+<script setup lang="ts">
+defineProps<{
+  code: string
+  icon?: string
+  language?: string
+  hideHeader?: boolean
+  filename?: string
+  highlights?: number[]
+  meta?: string
+}>()
+
+const config = {
+  wrapper: '[&>pre]:!rounded-t-none [&>pre]:!my-0 my-5',
+  header: 'flex items-center gap-1.5 border border-gray-200 dark:border-gray-700 border-b-0 relative rounded-t-md px-4 py-3 not-prose',
+  icon: {
+    base: ''
+  },
+  button: {
+    base: 'absolute top-2.5 right-2.5'
+  },
+  filename: 'text-gray-700 dark:text-gray-200 text-sm/6'
+}
+
+const { ui } = useUI('content.prose.code', undefined, config, undefined, true)
+</script>
+
+<template>
+  <div class="relative" :class="!!filename && ui.wrapper">
+    <div v-if="filename && !hideHeader" :class="ui.header">
+      <ProseCodeIcon :icon="icon" :filename="filename" :class="ui.icon.base" />
+
+      <span :class="ui.filename">{{ filename }}</span>
+    </div>
+
+    <ProseCodeButton :code="code" :class="ui.button.base" />
+
+    <slot />
+  </div>
+</template>
+
+<style>
+pre code .line {
+  display: block;
+  min-height: 1rem;
+}
+</style>
+
+
+<!--
 <script lang="ts" setup>
 defineProps<{
   code: string
@@ -11,8 +60,8 @@ const { copy, copied, isSupported } = useClipboard()
 </script>
 
 <template>
-  <div class="my-8 ring-1 ring-gray-300 dark:ring-gray-700 rounded-lg overflow-hidden">
-    <div class="group relative p-4 bg-gray-50 dark:bg-gray-700/20">
+  <div class="my-8 overflow-hidden">
+    <div class="group relative">
       <span v-if="filename" class="absolute top-2 right-3 text-xs font-mono">
         {{ filename }}
       </span>
@@ -50,3 +99,4 @@ const { copy, copied, isSupported } = useClipboard()
   min-height: 1rem;
 }
 </style>
+-->

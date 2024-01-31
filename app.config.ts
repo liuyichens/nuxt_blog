@@ -47,5 +47,27 @@ export default defineAppConfig({
                 }
             }
         }
-    }
+    },
+    website: {
+        search: {
+            groups: [
+                /**
+                 * End / is very important since we use startsWith
+                 * Without, page /blog will be in the wrong group
+                 */
+                {
+                    name: 'Articles',
+                    path: '/resources/',
+                },
+                {
+                    name: 'Blog',
+                    path: '/blog/',
+                },
+                {
+                    name: 'Packages',
+                    path: '/packages/',
+                },
+            ],
+        }
+    },
 })

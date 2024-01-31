@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ['@nuxt/content','@nuxt/ui'],
+  modules: ['@nuxt/content','@nuxt/ui','@vueuse/nuxt','@nuxtjs/plausible'],
   content: {
     highlight: {
       theme: {

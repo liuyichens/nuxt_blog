@@ -41,48 +41,48 @@ export default {
 **Input**
 
 ```md
-::: info
+::Note
 This is an info box.
-:::
+::
 
-::: tip
+::Tip
 This is a tip.
-:::
+::
 
-::: warning
+::Warning
 This is a warning.
-:::
+::
 
-::: danger
+::Caution
 This is a dangerous warning.
-:::
+::
 
-::: details
+::Important
 This is a details block.
-:::
+::
 ```
 
 **Output**
 
-::: info
+::Note
 This is an info box.
-:::
+::
 
-::: tip
+::Tip
 This is a tip.
-:::
+::
 
-::: warning
+::Warning
 This is a warning.
-:::
+::
 
-::: danger
+::Caution
 This is a dangerous warning.
-:::
+::
 
-::: details
+::Important
 This is a details block.
-:::
+::
 
 ## More
 

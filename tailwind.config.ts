@@ -36,10 +36,6 @@ export default <Partial<Config>> {
       16: '16',
     },
     extend: {
-      colors: {
-        background: 'rgb(var(--ui-background) / <alpha-value>)',
-        foreground: 'rgb(var(--ui-foreground) / <alpha-value>)'
-      },
       typography: (theme: any) => ({
         DEFAULT: {
           css: {
@@ -152,11 +148,20 @@ export default <Partial<Config>> {
               verticalAlign: 'baseline !important'
             },
             table: {
-              display: 'block',
-              overflowX: 'auto'
+              display: 'table',
+              overflowX: 'auto',
+              margin: 0
             },
             'table code': {
               display: 'inline-flex'
+            },
+            'h1 a,h2 a,h3 a,h4 a,h5 a,h6 a': {
+              'text-decoration-line': 'none',
+            },
+            'p a, ul a ol a': {
+              'text-decoration-line': 'underline !important',
+              'text-underline-offset': '0.2em',
+              'color': 'var(--color-primary)',
             }
           }
         },

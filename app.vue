@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NuxtLoadingIndicator />
     <NuxtLayout>
       <div class="main-layout">
         <Header/>
@@ -7,6 +8,7 @@
         <Footer/>
       </div>
     </NuxtLayout>
+    <UNotifications />
   </div>
 </template>
 <script setup lang="ts">

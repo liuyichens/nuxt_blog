@@ -4,6 +4,7 @@ date: 2022-07-01
 author: Evan You
 gravatar: eca93da2c67aadafe35d477aa8f454b8
 twitter: '@youyuxi'
+description: Today we are happy to announce that Vue 2.7 "Naruto" has been released!
 ---
 
 <p align="center">
