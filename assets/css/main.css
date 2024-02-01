@@ -90,7 +90,7 @@ body {
 
 .nav-item a {
     position: relative;
-    display: inline-block;
+    display: block;
     min-width: 50px;
     text-align: center;
     padding: 10px 15px;

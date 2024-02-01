@@ -32,10 +32,16 @@ const openSearch = ref(false)
           <NuxtLink to="/" class="link-active">首页</NuxtLink>
         </li>
         <li class="nav-item">
-          <NuxtLink to="/post">文章</NuxtLink>
+          <NuxtLink to="/favor">收藏</NuxtLink>
         </li>
         <li class="nav-item">
           <NuxtLink to="/about">关于</NuxtLink>
+        </li>
+        <li class="nav-item">
+          <NuxtLink to="https://liuyichens.github.io/" target="_blank">
+            知识库
+            <span class="i-heroicons-arrow-up-right-20-solid w-3 h-3"/>
+          </NuxtLink>
         </li>
         <li class="nav-item">
           <NuxtLink to="https://www.yuque.com/dashboard" target="_blank">
