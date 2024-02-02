@@ -17,7 +17,7 @@ const favorWebSites = favor.value?.websites || []
                data-aos="fade-up" data-aos-duration="600"
                :data-aos-delay="(index + 1) * 50">
             <NuxtLink :to="site.link" target="_blank">
-              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg dark:border-gray-800">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg dark:border-gray-800 overflow-hidden">
                 <img alt="logo" class="w-10 h-10 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
                      :src="site.logo">
                 <div class="flex-grow">
