@@ -11,7 +11,7 @@ const favorWebSites = favor.value?.websites || []
 <template>
   <main class="main-content">
     <section class="text-gray-600 body-font dark:text-gray-400">
-      <div class="container mx-auto">
+      <div class="mx-auto">
         <div class="flex flex-wrap">
           <div class="p-2 lg:w-1/4 md:w-1/2 w-full" v-for="(site, index) of favorWebSites" :key="index"
                data-aos="fade-up" data-aos-duration="600"
