@@ -41,5 +41,5 @@ websites:
   - link: https://www.metadisk.cc/market
     title: MetaDisk|Marekt - MetaDisk-丰富的电子教材网站
     logo: https://www.metadisk.cc/favicon.ico
-    desc: 丰富的电子教材，视频，音乐，图片
+    desc: 丰富的电子教材，视频，音乐，图片以及其他资源
 ---
