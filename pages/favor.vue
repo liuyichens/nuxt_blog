@@ -13,7 +13,7 @@ const favorWebSites = favor.value?.websites || []
     <section class="text-gray-600 body-font dark:text-gray-400">
       <div class="mx-auto">
         <div class="flex flex-wrap">
-          <div class="p-2 lg:w-1/4 md:w-1/2 w-full" v-for="(site, index) of favorWebSites" :key="index"
+          <div class="p-2 lg:w-1/4 md:w-1/2 w-full overflow-hidden" v-for="(site, index) of favorWebSites" :key="index"
                data-aos="fade-up" data-aos-duration="600"
                :data-aos-delay="(index + 1) * 50">
             <NuxtLink :to="site.link" target="_blank">
